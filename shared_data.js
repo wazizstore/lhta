@@ -23,7 +23,7 @@ const products = [
     name: "Ensemble Premium",
     price: "219",
     originalPrice: "259",
-    description: "طقم فاخر من قميص وبنطلون، تصميم عصري، مناسب للسهرات والمناسبات الخاصة.",
+    description: "طقم فاخر من قميص وبنطلون، تصميم عصري، مناسب المناسبات الخاصة.",
     images: [
       "Untitled_design_9.webp",
       "Untitled_design_70.webp",
@@ -42,7 +42,7 @@ const products = [
     name: "Ensemble Luxe",
     price: "199",
     originalPrice: "249",
-    description: "طقم شتوي دافئ، مناسب لأيام البرد. خامة ثقيلة وعالية الجودة. تصميم أنيق وعصري.",
+    description: "طقم  خامة ثقيلة وعالية الجودة. تصميم أنيق وعصري.",
     images: [
       "photo_2026-04-04_20-57-57_2.webp",
       "photo_2026-04-04_20-59-18.webp",
