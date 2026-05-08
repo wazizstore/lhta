@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنتج | LHATA OFICIAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Preload critical images for faster display -->
+    <link rel="preload" as="image" href="lhta.webp">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="nav-inner">
+            <button class="icon-btn" onclick="window.history.back()"><i class="fas fa-arrow-right"></i></button>
+            <a href="index.html" class="nav-logo"><img src="lhta.webp" alt="LHATA OFICIAL"></a>
+            <button class="icon-btn" onclick="toggleCart()">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="product-page" id="productLayout">
+        <!-- Content loaded by JS -->
+    </main>
+
+    <div class="drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <span style="font-weight: 800; color: var(--accent);">سلة التسوق</span>
+            <button class="icon-btn" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-body" id="cartBody"></div>
+        <div class="drawer-footer" id="cartFoot" style="display:none">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-weight:800;">
+                <span>المجموع:</span>
+                <span id="cartTotal" style="color: var(--accent);">0 درهم</span>
+            </div>
+            <button class="submit-btn" onclick="openCheckoutFromCart()">إتمام الطلب</button>
+        </div>
+    </div>
+
+    <!-- Checkout Drawer from Cart -->
+    <div class="drawer-overlay" id="coOverlay" onclick="closeCheckoutFromCart()"></div>
+    <div class="drawer" id="coDrawer" style="left:-100%;">
+        <div class="drawer-header">
+            <span style="font-weight: 800; color: var(--accent);">تأكيد الطلب</span>
+            <button class="icon-btn" onclick="closeCheckoutFromCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-body" id="coBody">
+            <div class="order-card" style="margin-top:0">
+                <div class="form-field"><label>الاسم الكامل</label><input type="text" id="cName"></div>
+                <div class="form-field"><label>رقم الهاتف</label><input type="tel" id="cPhone"></div>
+                <div class="form-field"><label>المدينة</label><input type="text" id="cCity"></div>
+                <div class="form-field"><label>العنوان</label><textarea id="cAddr"></textarea></div>
+                <button class="submit-btn" id="cartSubmitBtn" onclick="submitCartOrder()">تأكيد الطلب الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" style="position:fixed; bottom:100px; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; padding:10px 20px; border-radius:50px; font-size:13px; font-weight:800; display:none; z-index:3000; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"></div>
+
+    <script src="shared_data.js"></script>
+    <script>
+        let cart = JSON.parse(sessionStorage.getItem('wz_cart') || '[]');
+        let currentProduct = null;
+        let selColor = '', selSize = '';
+        const TG_TOKEN='8387473741:AAGHOI-oS7HXYFPSKfBmzotZ2PGCGNxhJiU', TG_CHAT='6781508116';
+
+        async function tg(msg) {
+            try {
+                const r=await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT,text:msg})});
+                return r.ok;
+            } catch(e) { return false; }
+        }
+
+        function updateBadge() {
+            document.getElementById('cartBadge').textContent = cart.length;
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.style.display = 'block';
+            setTimeout(() => t.style.display = 'none', 3000);
+        }
+
+        function buildProduct() {
+            const id = parseInt(new URLSearchParams(window.location.search).get('id'));
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+            currentProduct = p;
+
+            const layout = document.getElementById('productLayout');
+            layout.innerHTML = `
+                <div class="product-gallery reveal">
+                    <img src="${p.images[0]}" class="main-img" id="mainImg">
+                    <div class="thumb-grid">
+                        ${p.images.map((img, i) => `<img src="${img}" class="thumb-img ${i===0?'active':''}" onclick="changeImg('${img}', this)">`).join('')}
+                    </div>
+                </div>
+                <div class="product-info reveal">
+                    <h1>${p.name}</h1>
+                    <div class="price">${p.price} درهم</div>
+                    <p class="desc">${p.description}</p>
+
+                    <div class="option-group">
+                        <span class="option-label">اللون</span>
+                        <div class="chips">
+                            ${p.colors.map(c => `<div class="color-chip" style="background:${c.class}" onclick="selectColor('${c.name}', this)"></div>`).join('')}
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <span class="option-label">المقاس</span>
+                        <div class="chips">
+                            ${p.sizes.map(s => `<div class="chip" onclick="selectSize('${s}', this)">${s}</div>`).join('')}
+                            <div class="chip" onclick="toggleSizeGuide(this)" id="noSizeBtn">لا أعرف مقاسي</div>
+                        </div>
+                    </div>
+
+                    <div id="sizeGuideForm" style="display:none; background:#111; padding:15px; border-radius:8px; margin-bottom:20px; border:1px solid rgba(212,175,55,0.2);">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                            <div class="form-field" style="margin-bottom:0">
+                                <label style="font-size:11px;">الطول (سم)</label>
+                                <input type="number" id="pHeight" placeholder="175">
+                            </div>
+                            <div class="form-field" style="margin-bottom:0">
+                                <label style="font-size:11px;">الوزن (كجم)</label>
+                                <input type="number" id="pWeight" placeholder="70">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:30px;">
+                        <button class="submit-btn" style="background:#222; color:#fff; border:1px solid #333;" onclick="addToCart()">إضافة للسلة</button>
+                        <button class="submit-btn" onclick="document.getElementById('ocard').scrollIntoView({behavior:'smooth'})">اطلب الآن</button>
+                    </div>
+
+                    <div class="order-card" id="ocard">
+                        <h2 style="margin-bottom:20px; font-weight:900; color:var(--accent); text-align:center;">تأكيد الطلب</h2>
+                        <div class="form-field">
+                            <label>الاسم الكامل</label>
+                            <input type="text" id="oName" placeholder="أدخل اسمك">
+                        </div>
+                        <div class="form-field">
+                            <label>رقم الهاتف</label>
+                            <input type="tel" id="oPhone" placeholder="06XXXXXXXX">
+                        </div>
+                        <div class="form-field">
+                            <label>المدينة</label>
+                            <input type="text" id="oCity" placeholder="المدينة">
+                        </div>
+                        <div class="form-field">
+                            <label>العنوان</label>
+                            <textarea id="oAddr" placeholder="العنوان بالتفصيل"></textarea>
+                        </div>
+                        <button class="submit-btn" id="singleBtn" onclick="submitSingle()">تأكيد الطلب الآن</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function changeImg(src, el) {
+            document.getElementById('mainImg').src = src;
+            document.querySelectorAll('.thumb-img').forEach(img => img.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function selectColor(name, el) {
+            selColor = name;
+            document.querySelectorAll('.color-chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function selectSize(name, el) {
+            selSize = name;
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('sizeGuideForm').style.display = 'none';
+        }
+
+        function toggleSizeGuide(el) {
+            selSize = 'حسب الطول والوزن';
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('sizeGuideForm').style.display = 'block';
+        }
+
+        function addToCart() {
+            if (!selColor || !selSize) { showToast('يرجى اختيار اللون والمقاس'); return; }
+            let sizeInfo = selSize;
+            if (selSize === 'حسب الطول والوزن') {
+                const h = document.getElementById('pHeight').value, w = document.getElementById('pWeight').value;
+                if(!h || !w) { showToast('يرجى إدخال الطول والوزن'); return; }
+                sizeInfo = `الطول:${h} الوزن:${w}`;
+            }
+            cart.push({ id:currentProduct.id, name:currentProduct.name, price:currentProduct.price, color:selColor, size:sizeInfo, img:currentProduct.images[0] });
+            sessionStorage.setItem('wz_cart', JSON.stringify(cart));
+            updateBadge();
+            showToast('تمت الإضافة للسلة');
+            toggleCart();
+        }
+
+        async function submitSingle() {
+            const name=document.getElementById('oName').value.trim(), phone=document.getElementById('oPhone').value.trim(), city=document.getElementById('oCity').value.trim(), addr=document.getElementById('oAddr').value.trim();
+            if(!name||!phone||!city||!addr){showToast('يرجى ملء جميع الحقول');return;}
+            if(!selColor||!selSize){showToast('يرجى اختيار اللون والمقاس');return;}
+            
+            let sizeInfo = selSize;
+            if (selSize === 'حسب الطول والوزن') {
+                const h = document.getElementById('pHeight').value, w = document.getElementById('pWeight').value;
+                if(!h || !w) { showToast('يرجى إدخال الطول والوزن'); return; }
+                sizeInfo = `الطول:${h} الوزن:${w}`;
+            }
+
+            const msg=`🛍️ طلب جديد\n👤 ${name}\n📱 ${phone}\n🏙️ ${city}\n📍 ${addr}\n\n📦 ${currentProduct.name}\n💰 ${currentProduct.price} درهم\n🎨 اللون: ${selColor}\n📐 المقاس: ${sizeInfo}`;
+            const btn=document.getElementById('singleBtn');
+            btn.disabled=true; btn.innerHTML='جاري الإرسال... <span class="spinner"></span>';
+            
+            if(await tg(msg)){
+                document.getElementById('ocard').innerHTML=`<div class="success-box"><div class="suc-ico"><i class="fas fa-check-circle"></i></div><h3>تم استلام طلبك بنجاح!</h3><p>شكراً ${name}، سنتصل بك قريباً.</p></div>`;
+            } else {
+                showToast('حدث خطأ، حاول مرة أخرى');
+                btn.disabled=false; btn.textContent='تأكيد الطلب الآن';
+            }
+        }
+
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('open');
+            document.getElementById('cartOverlay').classList.toggle('open');
+            renderCart();
+        }
+
+        function renderCart() {
+            const body = document.getElementById('cartBody');
+            const foot = document.getElementById('cartFoot');
+            if (!cart.length) {
+                body.innerHTML = '<p style="text-align:center; padding:40px; opacity:0.3; font-size:14px;">السلة فارغة</p>';
+                foot.style.display = 'none';
+                return;
+            }
+            let total = 0;
+            body.innerHTML = cart.map((item, idx) => {
+                total += parseInt(item.price);
+                return `
+                    <div style="display:flex; gap:12px; margin-bottom:15px; align-items:center; background:#111; padding:10px; border-radius:8px;">
+                        <img src="${item.img}" style="width:50px; height:50px; object-fit:cover; border-radius:4px;">
+                        <div style="flex:1">
+                            <div style="font-weight:700; font-size:13px;">${item.name}</div>
+                            <div style="font-size:11px; color:var(--text-muted);">${item.color} · ${item.size}</div>
+                            <div style="font-weight:800; color:var(--accent); font-size:14px;">${item.price} د</div>
+                        </div>
+                        <button onclick="rmCart(${idx})" style="background:none; border:none; color:#ff4757; cursor:pointer;"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                `;
+            }).join('');
+            document.getElementById('cartTotal').textContent = total + ' درهم';
+            foot.style.display = 'block';
+        }
+
+        function rmCart(idx) {
+            cart.splice(idx, 1);
+            sessionStorage.setItem('wz_cart', JSON.stringify(cart));
+            updateBadge();
+            renderCart();
+        }
+
+        function openCheckoutFromCart() {
+            document.getElementById('coDrawer').style.left = '0';
+            document.getElementById('coOverlay').classList.add('open');
+            document.getElementById('cartDrawer').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('open');
+        }
+
+        function closeCheckoutFromCart() {
+            document.getElementById('coDrawer').style.left = '-100%';
+            document.getElementById('coOverlay').classList.remove('open');
+        }
+
+        async function submitCartOrder() {
+            const name=document.getElementById('cName').value.trim(), phone=document.getElementById('cPhone').value.trim(), city=document.getElementById('cCity').value.trim(), addr=document.getElementById('cAddr').value.trim();
+            if(!name||!phone||!city||!addr){showToast('يرجى ملء جميع الحقول');return;}
+            
+            let msg=`🛒 طلب من السلة\n👤 ${name}\n📱 ${phone}\n🏙️ ${city}\n📍 ${addr}\n\n📋 المنتجات:\n`, total=0;
+            cart.forEach((i,idx)=>{total+=parseInt(i.price);msg+=`${idx+1}. ${i.name} · ${i.color} · ${i.size} · ${i.price} درهم\n`;});
+            msg+=`\n💰 المجموع: ${total} درهم`;
+            
+            const btn=document.getElementById('cartSubmitBtn');
+            btn.disabled=true; btn.innerHTML='جاري الإرسال... <span class="spinner"></span>';
+            
+            if(await tg(msg)){
+                document.getElementById('coBody').innerHTML=`<div class="success-box"><div class="suc-ico"><i class="fas fa-check-circle"></i></div><h3>تم استلام طلبك بنجاح!</h3><p>شكراً ${name}، سنتصل بك قريباً.</p></div>`;
+                cart=[]; sessionStorage.setItem('wz_cart', JSON.stringify(cart)); updateBadge();
+            } else {
+                showToast('حدث خطأ، حاول مرة أخرى');
+                btn.disabled=false; btn.textContent='تأكيد الطلب الآن';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateBadge();
+            buildProduct();
+        });
+    </script>
+</body>
+</html>
