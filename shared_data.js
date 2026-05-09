@@ -42,9 +42,9 @@ const products = [
     originalPrice: "259",
     description: "طقم فاخر من قميص وبنطلون، تصميم عصري، مناسب للسهرات والمناسبات الخاصة.",
     images: [
-      "Untitled_design_(9).webp",
-      "Untitled_design_(70).webp",
-      "Untitled_design_(71).webp"
+      "Untitled design (9).webp",
+      "Untitled_design (70).webp",
+      "Untitled_design (71).webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
@@ -61,7 +61,7 @@ const products = [
     originalPrice: "249",
     description: "طقم شتوي دافئ، مناسب لأيام البرد. خامة ثقيلة وعالية الجودة. تصميم أنيق وعصري.",
     images: [
-      "photo_2026-04-04_20-57-57_(2).webp",
+      "photo_2026-04-04_20-57-57 (2).webp",
       "photo_2026-04-04_20-59-18.webp",
       "photo_2026-04-04_20-58-16.webp"
     ],
