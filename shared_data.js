@@ -6,8 +6,8 @@ const products = [
     originalPrice: "249",
     description: "طقم بولو عصري وأنيق، خامة مريحة وتصميم رياضي فاخر.",
     images: [
-      "images/polo/1777485919_d635acea-cbfd-4343-b598-25367932f822 (1) - Edited.webp",
-      "images/polo/1777485916_9418270d-1dd6-4ca5-ad13-d49a6f938858 - Edited.webp"
+      "polo/1777485919_d635acea-cbfd-4343-b598-25367932f822 (1) - Edited.webp",
+      "polo/1777485916_9418270d-1dd6-4ca5-ad13-d49a6f938858 - Edited.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
