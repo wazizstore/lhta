@@ -9,10 +9,10 @@ const products = [
       "1777485919_d635acea-cbfd-4343-b598-25367932f822 (1) - Edited.webp",
       "1777485916_9418270d-1dd6-4ca5-ad13-d49a6f938858 - Edited.webp"
     ],
-    colors: [
-      {name:"أسود", class:"black", inStock: true},
-      {name:"أبيض", class:"white", inStock: true}
-    ],
+     colors: [
+    {name: "أسود", class: "black", inStock: true},
+    {name: "أزرق", class: "blue", inStock: true}
+  ],
     sizes: ["M","L","XL"],
     inStock: true
   },
