@@ -6,8 +6,8 @@ const products = [
     originalPrice: "249",
     description: "طقم بولو عصري وأنيق، خامة مريحة وتصميم رياضي فاخر.",
     images: [
-      "polo/1777485919_d635acea-cbfd-4343-b598-25367932f822 (1) - Edited.webp",
-      "polo/1777485916_9418270d-1dd6-4ca5-ad13-d49a6f938858 - Edited.webp"
+      "1777485919_d635acea-cbfd-4343-b598-25367932f822 (1) - Edited.webp",
+      "1777485916_9418270d-1dd6-4ca5-ad13-d49a6f938858 - Edited.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
@@ -23,9 +23,9 @@ const products = [
     originalPrice: "229",
     description: "طقم أنيق خامات فاخرة وتفصيل محترف.",
     images: [
-      "images/6032874041250614618.webp",
-      "images/6032874041250614620.webp",
-      "images/6032874041250614622.webp"
+      "6032874041250614618.webp",
+      "6032874041250614620.webp",
+      "6032874041250614622.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
@@ -42,9 +42,9 @@ const products = [
     originalPrice: "259",
     description: "طقم فاخر من قميص وبنطلون، تصميم عصري، مناسب للسهرات والمناسبات الخاصة.",
     images: [
-      "images/Untitled design (9).webp",
-      "images/Untitled design (70).webp",
-      "images/Untitled design (71).webp"
+      "Untitled design (9).webp",
+      "Untitled design (70).webp",
+      "Untitled design (71).webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
@@ -61,9 +61,9 @@ const products = [
     originalPrice: "249",
     description: "طقم شتوي دافئ، مناسب لأيام البرد. خامة ثقيلة وعالية الجودة. تصميم أنيق وعصري.",
     images: [
-      "images/photo_2026-04-04_20-57-57 (2).webp",
-      "images/photo_2026-04-04_20-59-18.webp",
-      "images/photo_2026-04-04_20-58-16.webp"
+      "photo_2026-04-04_20-57-57 (2).webp",
+      "photo_2026-04-04_20-59-18.webp",
+      "photo_2026-04-04_20-58-16.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
@@ -80,9 +80,9 @@ const products = [
     originalPrice: "229",
     description: "طقم أنيق خامات فاخرة وتفصيل محترف.",
     images: [
-      "images/1754420532_IMG_20250713_230913_861.webp",
-      "images/1754420532_IMG_20250713_230913_901.webp",
-      "images/1754420532_IMG_20250713_230914_218.webp"
+      "1754420532_IMG_20250713_230913_861.webp",
+      "1754420532_IMG_20250713_230913_901.webp",
+      "1754420532_IMG_20250713_230914_218.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
