@@ -13,7 +13,7 @@ const products = [
      colors: [
     {name: "أسود", class: "black", inStock: true},
     {name: "أزرق", class: "blue", inStock: true},
-         {name:"أبيض", class:"white", inStock: true},
+         {name:"أبيض", class:"white", inStock: true}
   ],
     sizes: ["M","L","XL"],
     inStock: true
