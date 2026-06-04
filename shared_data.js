@@ -1,4 +1,23 @@
 const products = [
+    {
+    id: 20,
+    name: "Ensemble nike",
+    price: "199",
+    originalPrice: "249",
+    description: "sooooooooooooooooooooooolde",
+    images: [
+      "Untitled design (100).webp",
+      "Untitled design (99).webp"
+        
+    ],
+     colors: [
+    {name: "أسود", class: "black", inStock: true},
+    {name: "الأخضر ", class: "green", inStock: true}
+
+  ],
+    sizes: ["M","L","XL"],
+    inStock: true
+  },
   {
     id: 19,
     name: "Ensemble Polo",
