@@ -44,9 +44,9 @@ const products = [
     originalPrice: "229",
     description: "طقم أنيق خامات فاخرة وتفصيل محترف.",
     images: [
-      "6032874041250614618.webp",
-      "6032874041250614620.webp",
-      "6032874041250614622.webp"
+      "product_10_500x500.webp",
+      "product_11_500x500.webp",
+      "product_12_500x500.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
@@ -64,9 +64,9 @@ const products = [
     originalPrice: "249",
     description: "طقم شتوي دافئ، مناسب لأيام البرد. خامة ثقيلة وعالية الجودة. تصميم أنيق وعصري.",
     images: [
-      "photo_2026-04-04_20-57-57 (2).webp",
-      "photo_2026-04-04_20-59-18.webp",
-      "photo_2026-04-04_20-58-16.webp"
+      "product_3_500x500.webp",
+      "product_2_500x500.webp",
+      "product_1_500x500.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
@@ -83,9 +83,12 @@ const products = [
     originalPrice: "229",
     description: "طقم أنيق خامات فاخرة وتفصيل محترف.",
     images: [
-      "1754420532_IMG_20250713_230913_861.webp",
-      "1754420532_IMG_20250713_230913_901.webp",
-      "1754420532_IMG_20250713_230914_218.webp"
+      "product_6_500x500.webp",
+      "product_5_500x500.webp",
+      "product_9_500x500.webp",
+          "product_4_500x500.webp",
+          "product_8_500x500.webp",
+          "product_7_500x500.webp"
     ],
     colors: [
       {name:"أسود", class:"black", inStock: true},
