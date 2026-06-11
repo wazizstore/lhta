@@ -39,7 +39,7 @@ const products = [
   },
   {
     id: 17,
-    name: "Ensemble Classic",
+    name: "Ensemble simple",
     price: "199",
     originalPrice: "229",
     description: "طقم أنيق خامات فاخرة وتفصيل محترف.",
