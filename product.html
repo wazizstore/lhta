@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- Preload critical images for faster display -->
     <link rel="preload" as="image" href="lhta.webp">
 </head>
 <body>
@@ -25,9 +24,7 @@
         </div>
     </header>
 
-    <main class="product-page" id="productLayout">
-        <!-- Content loaded by JS -->
-    </main>
+    <main class="product-page" id="productLayout"></main>
 
     <div class="drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="drawer" id="cartDrawer">
@@ -45,7 +42,6 @@
         </div>
     </div>
 
-    <!-- Checkout Drawer from Cart -->
     <div class="drawer-overlay" id="coOverlay" onclick="closeCheckoutFromCart()"></div>
     <div class="drawer" id="coDrawer" style="left:-100%;">
         <div class="drawer-header">
@@ -71,6 +67,68 @@
         let currentProduct = null;
         let selColor = '', selSize = '';
         const TG_TOKEN='8387473741:AAGHOI-oS7HXYFPSKfBmzotZ2PGCGNxhJiU', TG_CHAT='6781508116';
+
+        // ========== جدول المقاسات التلقائي ==========
+        const sizeChart = [
+            { size: "M", minHeight: 1.60, maxHeight: 1.72, minWeight: 50, maxWeight: 65 },
+            { size: "L", minHeight: 1.70, maxHeight: 1.80, minWeight: 65, maxWeight: 78 },
+            { size: "XL", minHeight: 1.75, maxHeight: 1.88, minWeight: 78, maxWeight: 90 }
+        ];
+
+        /**
+         * تحديد المقاس المناسب بناءً على الطول والوزن
+         * @param {number} height - الطول بالمتر
+         * @param {number} weight - الوزن بالكيلوجرام
+         * @param {array} availableSizes - قائمة المقاسات المتوفرة في المنتج (مثل ["M","L","XL"])
+         * @returns {string} - المقاس المناسب
+         */
+        function getAutoSize(height, weight, availableSizes) {
+            // 1. البحث عن مقاس ينطبق عليه الطول والوزن معاً
+            for (let chart of sizeChart) {
+                if (availableSizes.includes(chart.size)) {
+                    const heightMatch = (height >= chart.minHeight && height <= chart.maxHeight);
+                    const weightMatch = (weight >= chart.minWeight && weight <= chart.maxWeight);
+                    if (heightMatch && weightMatch) {
+                        return chart.size;
+                    }
+                }
+            }
+            
+            // 2. إذا لم يجد تطابق كامل، نحاول بناءً على الوزن فقط (الأولوية للوزن)
+            let bestMatch = null;
+            for (let chart of sizeChart) {
+                if (availableSizes.includes(chart.size)) {
+                    if (weight >= chart.minWeight && weight <= chart.maxWeight) {
+                        return chart.size;
+                    }
+                }
+            }
+            
+            // 3. إذا كان الوزن أكبر من كل المقاسات المتوفرة -> نأخذ أكبر مقاس متوفر
+            const maxAvailable = [...availableSizes].sort((a,b) => {
+                const order = { "XS":0, "S":1, "M":2, "L":3, "XL":4, "XXL":5 };
+                return (order[b]||0) - (order[a]||0);
+            })[0];
+            
+            const maxWeightInChart = Math.max(...sizeChart.filter(s => availableSizes.includes(s.size)).map(s => s.maxWeight));
+            if (weight > maxWeightInChart) {
+                return maxAvailable;
+            }
+            
+            // 4. إذا كان الوزن أقل من كل المقاسات المتوفرة -> نأخذ أصغر مقاس متوفر
+            const minAvailable = [...availableSizes].sort((a,b) => {
+                const order = { "XS":0, "S":1, "M":2, "L":3, "XL":4, "XXL":5 };
+                return (order[a]||0) - (order[b]||0);
+            })[0];
+            
+            const minWeightInChart = Math.min(...sizeChart.filter(s => availableSizes.includes(s.size)).map(s => s.minWeight));
+            if (weight < minWeightInChart) {
+                return minAvailable;
+            }
+            
+            // 5. في حالة عدم وجود تطابق نهائي، نعيد أكبر مقاس متوفر
+            return maxAvailable;
+        }
 
         async function tg(msg) {
             try {
@@ -135,6 +193,9 @@
                                 <input type="number" id="pWeight" placeholder="70">
                             </div>
                         </div>
+                        <div style="margin-top:10px; font-size:12px; color:var(--accent); text-align:center;">
+                            سيتم تحديد المقاس المناسب تلقائياً
+                        </div>
                     </div>
 
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:30px;">
@@ -186,42 +247,71 @@
         }
 
         function toggleSizeGuide(el) {
-            selSize = 'حسب الطول والوزن';
+            // هنا لم نعد نحدد selSize = 'حسب الطول والوزن'، بل سنقوم بحسابه لاحقاً
             document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
             el.classList.add('active');
             document.getElementById('sizeGuideForm').style.display = 'block';
         }
 
-        function addToCart() {
-            if (!selColor || !selSize) { showToast('يرجى اختيار اللون والمقاس'); return; }
-            let sizeInfo = selSize;
-            if (selSize === 'حسب الطول والوزن') {
-                const h = document.getElementById('pHeight').value, w = document.getElementById('pWeight').value;
-                if(!h || !w) { showToast('يرجى إدخال الطول والوزن'); return; }
-                sizeInfo = `الطول:${h} الوزن:${w}`;
+        // دالة لحساب المقاس بناءً على الطول والوزن المدخلين والمقاسات المتوفرة للمنتج
+        function calculateAutoSize() {
+            const heightCm = parseFloat(document.getElementById('pHeight')?.value);
+            const weightKg = parseFloat(document.getElementById('pWeight')?.value);
+            
+            if (!heightCm || !weightKg || isNaN(heightCm) || isNaN(weightKg)) {
+                return null;
             }
-            cart.push({ id:currentProduct.id, name:currentProduct.name, price:currentProduct.price, color:selColor, size:sizeInfo, img:currentProduct.images[0] });
-            sessionStorage.setItem('wz_cart', JSON.stringify(cart));
-            updateBadge();
-            showToast('تمت الإضافة للسلة');
-            toggleCart();
+            
+            const heightM = heightCm / 100;
+            const availableSizes = currentProduct.sizes;
+            
+            return getAutoSize(heightM, weightKg, availableSizes);
         }
 
         async function submitSingle() {
             const name=document.getElementById('oName').value.trim(), phone=document.getElementById('oPhone').value.trim(), city=document.getElementById('oCity').value.trim(), addr=document.getElementById('oAddr').value.trim();
             if(!name||!phone||!city||!addr){showToast('يرجى ملء جميع الحقول');return;}
-            if(!selColor||!selSize){showToast('يرجى اختيار اللون والمقاس');return;}
+            if(!selColor){showToast('يرجى اختيار اللون');return;}
             
-            let sizeInfo = selSize;
-            if (selSize === 'حسب الطول والوزن') {
-                const h = document.getElementById('pHeight').value, w = document.getElementById('pWeight').value;
-                if(!h || !w) { showToast('يرجى إدخال الطول والوزن'); return; }
-                sizeInfo = `الطول:${h} الوزن:${w}`;
+            // التحقق من المقاس
+            let finalSize = selSize;
+            let isAutoCalculated = false;
+            let autoHeight = null, autoWeight = null;
+            
+            // إذا كان المستخدم قد اختار "لا أعرف مقاسي" (أي حقل الطول والوزن ظاهر)
+            const sizeGuideForm = document.getElementById('sizeGuideForm');
+            const isUsingAutoSize = sizeGuideForm && sizeGuideForm.style.display === 'block';
+            
+            if (isUsingAutoSize) {
+                const height = parseFloat(document.getElementById('pHeight')?.value);
+                const weight = parseFloat(document.getElementById('pWeight')?.value);
+                if (!height || !weight || isNaN(height) || isNaN(weight)) {
+                    showToast('يرجى إدخال الطول والوزن');
+                    return;
+                }
+                autoHeight = height;
+                autoWeight = weight;
+                finalSize = calculateAutoSize();
+                if (!finalSize) {
+                    showToast('حدث خطأ في حساب المقاس، حاول مرة أخرى');
+                    return;
+                }
+                isAutoCalculated = true;
+            } else if (!selSize) {
+                showToast('يرجى اختيار المقاس');
+                return;
             }
-
-            const msg=`🛍️ طلب جديد\n👤 ${name}\n📱 ${phone}\n🏙️ ${city}\n📍 ${addr}\n\n📦 ${currentProduct.name}\n💰 ${currentProduct.price} درهم\n🎨 اللون: ${selColor}\n📐 المقاس: ${sizeInfo}`;
+            
             const btn=document.getElementById('singleBtn');
             btn.disabled=true; btn.innerHTML='جاري الإرسال... <span class="spinner"></span>';
+            
+            // بناء رسالة التيليجرام
+            let msg = `🛍️ طلب جديد\n👤 ${name}\n📱 ${phone}\n🏙️ ${city}\n📍 ${addr}\n\n📦 ${currentProduct.name}\n💰 ${currentProduct.price} درهم\n🎨 اللون: ${selColor}\n📐 المقاس: ${finalSize}`;
+            
+            // إذا تم استخدام الحساب التلقائي، نضيف ملاحظة بالطول والوزن
+            if (isAutoCalculated && autoHeight && autoWeight) {
+                msg += `\n📏 (تم الحساب تلقائياً: الطول ${autoHeight} سم / الوزن ${autoWeight} كجم)`;
+            }
             
             if(await tg(msg)){
                 document.getElementById('ocard').innerHTML=`<div class="success-box"><div class="suc-ico"><i class="fas fa-check-circle"></i></div><h3>تم استلام طلبك بنجاح!</h3><p>شكراً ${name}، سنتصل بك قريباً.</p></div>`;
@@ -229,6 +319,40 @@
                 showToast('حدث خطأ، حاول مرة أخرى');
                 btn.disabled=false; btn.textContent='تأكيد الطلب الآن';
             }
+        }
+
+        function addToCart() {
+            if (!selColor) { showToast('يرجى اختيار اللون'); return; }
+            
+            let finalSize = selSize;
+            const sizeGuideForm = document.getElementById('sizeGuideForm');
+            const isUsingAutoSize = sizeGuideForm && sizeGuideForm.style.display === 'block';
+            
+            if (isUsingAutoSize) {
+                const height = parseFloat(document.getElementById('pHeight')?.value);
+                const weight = parseFloat(document.getElementById('pWeight')?.value);
+                if (!height || !weight || isNaN(height) || isNaN(weight)) {
+                    showToast('يرجى إدخال الطول والوزن لحساب المقاس');
+                    return;
+                }
+                finalSize = calculateAutoSize();
+                if (!finalSize) {
+                    showToast('حدث خطأ في حساب المقاس');
+                    return;
+                }
+                selSize = finalSize; // نحفظ المقاس المحسوب
+                // نضيف تفصيلة الطول والوزن للمقاس المعروض في السلة
+                finalSize = `${finalSize} (الطول:${height} الوزن:${weight})`;
+            } else if (!selSize) {
+                showToast('يرجى اختيار المقاس');
+                return;
+            }
+            
+            cart.push({ id:currentProduct.id, name:currentProduct.name, price:currentProduct.price, color:selColor, size:finalSize, img:currentProduct.images[0] });
+            sessionStorage.setItem('wz_cart', JSON.stringify(cart));
+            updateBadge();
+            showToast('تمت الإضافة للسلة');
+            toggleCart();
         }
 
         function toggleCart() {
