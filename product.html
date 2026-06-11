@@ -170,7 +170,7 @@
                     <div class="option-group">
                         <span class="option-label">اللون</span>
                         <div class="chips">
-                            ${p.colors.map(c => `<div class="color-chip" style="background:${c.class}" onclick="selectColor('${c.name}', this)"></div>`).join('')}
+                         ${p.colors.filter(c => c.inStock !== false).map(c => `<div class="color-chip" style="background:${c.class}" onclick="selectColor('${c.name}', this)"></div>`).join('')}
                         </div>
                     </div>
 
