@@ -56,25 +56,7 @@ const products = [
     sizes: ["M","L","XL"],
     inStock: true
   },
-  {
-    id: 13,
-    name: "Ensemble Premium",
-    price: "219",
-    originalPrice: "259",
-    description: "طقم فاخر من قميص وبنطلون، تصميم عصري، مناسب للسهرات والمناسبات الخاصة.",
-    images: [
-      "Untitled design (9).webp",
-      "Untitled_design (70).webp",
-      "Untitled_design (71).webp"
-    ],
-    colors: [
-      {name:"أسود", class:"black", inStock: true},
-      {name:"أبيض", class:"white", inStock: true},
-      {name:"بني", class:"brown", inStock: true}
-    ],
-    sizes: ["M","L","XL"],
-    inStock: true
-  },
+
   {
     id: 10,
     name: "Ensemble Luxe",
@@ -108,7 +90,7 @@ const products = [
     colors: [
       {name:"أسود", class:"black", inStock: true},
       {name:"أبيض", class:"white", inStock: true},
-      {name:"ازرق", class:"blue", inStock: true}
+      {name:"فضي", class:"silver", inStock: true}
     ],
     sizes: ["M","L","XL"],
     inStock: true
