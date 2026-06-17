@@ -14,7 +14,7 @@ const products = [
   sizes: [],
   inStock: true
 },
-  },
+
     {
     id: 20,
     name: "Ensemble nike",
