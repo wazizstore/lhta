@@ -43,7 +43,7 @@ images: [
   sizes: [],           // فارغة = لا يظهر قسم المقاس
   showSizeGuide: false,
   inStock: true
-}
+},
 
   {
     id: 21,
