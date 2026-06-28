@@ -22,6 +22,27 @@
 
 const products = [
   {
+    id: 23,
+    name: "ensemble polo",
+    price: "199",
+    originalPrice: "230",
+    description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
+    images: [
+    "Untitled design - 2026-06-28T083622.279.webp",
+    "Untitled design - 2026-06-28T084657.866.webp",
+    "Untitled design - 2026-06-28T084730.640.webp",
+    "Untitled design - 2026-06-28T085218.094.webp"
+],
+     colors: [
+      { name: "أسود", class: "black", inStock: true },
+      { name: "أخضر", class: "green", inStock: true }
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+  },
+
+  {
   id: 22,                          // رقم فريد، لا يتكرر
   name: "pack 7 x 1",
   price: "249",
