@@ -105,8 +105,7 @@ images: [
   {
     id: 19,
     name: "Ensemble Polo",
-    price: "219
-",
+    price: "219",
     originalPrice: "249",
     description: "طقم بولو عصري وأنيق، خامة مريحة وتصميم رياضي فاخر.",
     images: [
