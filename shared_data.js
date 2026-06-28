@@ -105,7 +105,8 @@ images: [
   {
     id: 19,
     name: "Ensemble Polo",
-    price: "199",
+    price: "219
+",
     originalPrice: "249",
     description: "طقم بولو عصري وأنيق، خامة مريحة وتصميم رياضي فاخر.",
     images: [
@@ -126,7 +127,7 @@ images: [
   {
     id: 17,
     name: "Ensemble Simple",
-    price: "199",
+    price: "219",
     originalPrice: "229",
     description: "طقم أنيق بخامات فاخرة وتفصيل محترف.",
     images: [
@@ -147,7 +148,7 @@ images: [
   {
     id: 10,
     name: "Ensemble Luxe",
-    price: "199",
+    price: "219",
     originalPrice: "249",
     description: "طقم شتوي دافئ، مناسب لأيام البرد. خامة ثقيلة وعالية الجودة. تصميم أنيق وعصري.",
     images: [
@@ -168,7 +169,7 @@ images: [
   {
     id: 18,
     name: "Ensemble Modern",
-    price: "199",
+    price: "219",
     originalPrice: "229",
     description: "طقم أنيق بخامات فاخرة وتفصيل محترف.",
     images: [
