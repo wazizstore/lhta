@@ -7,7 +7,7 @@
   Bot Token that was hard-coded in the page source has been removed for
   security reasons and replaced with this endpoint.
 */
-export const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw9yUzIjVV0UJT9vmpEcvFaJ14r5uHVLaNj7qsBI4KwjFGu5Bs5yhUKTvV3bV6sDWaUGw/exec ';
+export const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw9yUzIjVV0UJT9vmpEcvFaJ14r5uHVLaNj7qsBI4KwjFGu5Bs5yhUKTvV3bV6sDWaUGw/exec';
 
 export const WHATSAPP_NUMBER = '212604971625';
 
