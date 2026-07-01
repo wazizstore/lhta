@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAZIZ SHOP | المتجر الرسمي — أزياء رجالية وإكسسوارات بجودة عالية</title>
+  <meta name="description" content="WAZIZ SHOP — متجرك الرسمي للأزياء الرجالية والإكسسوارات الفاخرة بجودة عالية وأسعار مناسبة، توصيل سريع لجميع المدن المغربية والدفع عند الاستلام.">
+  <link rel="canonical" href="https://wazizshop.com/index.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WAZIZ SHOP">
+  <meta property="og:title" content="WAZIZ SHOP | المتجر الرسمي">
+  <meta property="og:description" content="أزياء رجالية وإكسسوارات فاخرة بجودة عالية، توصيل سريع لجميع المدن المغربية والدفع عند الاستلام.">
+  <meta property="og:image" content="https://wazizshop.com/brand_hero_bg.webp">
+  <meta property="og:url" content="https://wazizshop.com/index.html">
+  <meta property="og:locale" content="ar_MA">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WAZIZ SHOP | المتجر الرسمي">
+  <meta name="twitter:description" content="أزياء رجالية وإكسسوارات فاخرة بجودة عالية، توصيل سريع لجميع المدن المغربية.">
+  <meta name="twitter:image" content="https://wazizshop.com/brand_hero_bg.webp">
+
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <!-- Preload the LCP image (hero background) -->
+  <link rel="preload" as="image" href="brand_hero_bg.webp" fetchpriority="high">
+
+  <!-- Fonts: preconnect + non-blocking load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap">
+
+  <!-- Font Awesome: loaded non-render-blocking, falls back via <noscript> -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "WAZIZ SHOP",
+    "url": "https://wazizshop.com/",
+    "logo": "https://wazizshop.com/brand_hero_bg.webp",
+    "sameAs": ["https://wa.me/212604971625"]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <div style="width:40px;"></div>
+      <a href="index.html" class="nav-logo">WAZIZ <span>SHOP</span></a>
+      <button class="icon-btn" data-action="toggle-cart" aria-label="سلة التسوق" aria-haspopup="true">
+        <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+        <span class="badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <img src="brand_hero_bg.webp" alt="" width="1200" height="744" loading="eager" decoding="async" fetchpriority="high">
+      <div class="hero-content">
+        <h1 class="hero-title">WAZIZ SHOP</h1>
+        <a class="btn-primary" href="shop.html">
+          <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+          تسوق الآن
+        </a>
+      </div>
+    </section>
+
+   
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="footer-logo">WAZIZ <span>SHOP</span></div>
+    <p class="footer-tagline">أناقة مغربية بلمسة عالمية.</p>
+    <p class="footer-copy">© 2026 waziz shop — جميع الحقوق محفوظة</p>
+  </footer>
+
+  <!-- ── Cart Drawer ── -->
+  <div class="drawer-overlay" id="cartOverlay"></div>
+  <div class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="سلة التسوق">
+    <div class="drawer-header">
+      <span class="drawer-title"><i class="fas fa-shopping-bag" aria-hidden="true"></i> سلة التسوق</span>
+      <button class="icon-btn" data-action="toggle-cart" aria-label="إغلاق السلة"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-footer" id="cartFoot" style="display:none">
+      <div class="cart-total-row">
+        <span>المجموع:</span>
+        <span class="cart-total-amount" id="cartTotal">0 درهم</span>
+      </div>
+      <a class="submit-btn" href="shop.html">
+        <i class="fas fa-check-circle" aria-hidden="true"></i>
+        إتمام الطلب
+      </a>
+    </div>
+  </div>
+
+  <!-- ── WhatsApp ── -->
+  <a href="https://wa.me/212604971625" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="assets/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المنتج | WAZIZ SHOP</title>
+  <meta name="description" content="تفاصيل المنتج، الألوان والمقاسات المتوفرة، وطلب سريع مع توصيل لجميع المدن المغربية والدفع عند الاستلام.">
+  <link rel="canonical" href="https://wazizshop.com/product.html">
+
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="WAZIZ SHOP">
+  <meta property="og:title" content="المنتج | WAZIZ SHOP">
+  <meta property="og:url" content="https://wazizshop.com/product.html">
+  <meta property="og:locale" content="ar_MA">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#productPage" class="skip-link">تخطي إلى المحتوى</a>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <button class="icon-btn" onclick="history.back()" aria-label="رجوع">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </button>
+      <a href="index.html" class="nav-logo">WAZIZ <span>SHOP</span></a>
+      <button class="icon-btn" data-action="toggle-cart" aria-label="سلة التسوق" aria-haspopup="true">
+        <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+        <span class="badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Product Content ── -->
+  <main id="productPage" class="product-page">
+    <div style="text-align:center; padding:60px 20px; color:var(--text-muted);">
+      <i class="fas fa-spinner fa-spin" style="font-size:28px;" aria-hidden="true"></i>
+      <span class="sr-only">جاري التحميل...</span>
+    </div>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ── Cart Drawer ── -->
+  <div class="drawer-overlay" id="cartOverlay"></div>
+  <div class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="سلة التسوق">
+    <div class="drawer-header">
+      <span class="drawer-title"><i class="fas fa-shopping-bag" aria-hidden="true"></i> سلة التسوق</span>
+      <button class="icon-btn" data-action="toggle-cart" aria-label="إغلاق السلة"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-footer" id="cartFoot" style="display:none">
+      <div class="cart-total-row">
+        <span>المجموع:</span>
+        <span class="cart-total-amount" id="cartTotal">0 درهم</span>
+      </div>
+      <button class="submit-btn" type="button" data-action="open-checkout">
+        <i class="fas fa-check-circle" aria-hidden="true"></i>
+        إتمام الطلب
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Checkout Drawer ── -->
+  <div class="drawer-overlay" id="coOverlay"></div>
+  <div class="co-drawer" id="coDrawer" role="dialog" aria-modal="true" aria-label="تأكيد الطلب">
+    <div class="drawer-header">
+      <span class="drawer-title"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> تأكيد الطلب</span>
+      <button class="icon-btn" type="button" data-action="close-checkout" aria-label="إغلاق"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </div>
+    <div class="drawer-body" id="coBody">
+      <form id="checkoutForm" novalidate>
+        <div class="form-field"><label for="cName">الاسم الكامل</label><input type="text" id="cName" name="name" placeholder="اسمك الكامل" autocomplete="name" required></div>
+        <div class="form-field"><label for="cPhone">رقم الهاتف</label><input type="tel" id="cPhone" name="phone" placeholder="06XXXXXXXX" autocomplete="tel" required></div>
+        <div class="form-field"><label for="cCity">المدينة</label><input type="text" id="cCity" name="city" placeholder="مدينتك" autocomplete="address-level2" required></div>
+        <div class="form-field"><label for="cAddr">العنوان التفصيلي</label><textarea id="cAddr" name="address" placeholder="الحي، الشارع..." autocomplete="street-address" required></textarea></div>
+        <button class="submit-btn" id="coSubmitBtn" type="submit">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          تأكيد الطلب الآن
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── WhatsApp ── -->
+  <a href="https://wa.me/212604971625" class="whatsapp-float" target="_blank" rel="noopener" aria-label="واتساب">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <script type="module" src="assets/js/product.js"></script>
+</body>
+</html>
