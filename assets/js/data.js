@@ -39,7 +39,7 @@ export const products = [
     ],
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
-    inStock: true
+    inStock: false
   },
 
   {
