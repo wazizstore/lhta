@@ -87,22 +87,6 @@ images: [
   inStock: true
 },
 
-  {
-    id: 21,
-    name: "Pack 3x1",
-    price: "269",
-    originalPrice: "299",
-    description: "سماعات بلوتوث + 2 أساور لتغيير اللوك حسب ذوقك + ساعة ذكية T1000 Plus + عطر Afnan 9PM Black 100ml",
-    images: [
-      "converted_image.webp",
-      "6GPf7yQ4nxJnbvAPc3xGRIiCtF58k5yCmCfH2jnt.webp",
-      "images (3).webp"
-    ],
-    colors: [],      // No color selection
-    sizes: [],       // No size selection
-    showSizeGuide: false,
-    inStock: true
-  },
 
   {
     id: 20,
