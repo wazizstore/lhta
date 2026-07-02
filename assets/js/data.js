@@ -21,6 +21,27 @@
 */
 
 export const products = [
+    {
+    id: 23,
+    name: "سروال لولان",
+    price: "179",
+    originalPrice: "199",
+    description: "مريحة، مناسب لفصل الصيف",
+    images:[
+    "5eab0c13-7ff6-48f6-90d3-f77620dda560.webp",
+    "ChatGPT_Image_2_يوليو_2026_11_57_58_ص.webp",
+    "ChatGPT_Image_2_يوليو_2026_12_01_24_م.webp"
+],
+
+
+     colors: [
+      { name: "بني", class: "brown", inStock: true }
+     
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+  },
   {
     id: 23,
     name: "ensemble polo",
