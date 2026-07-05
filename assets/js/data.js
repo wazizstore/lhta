@@ -23,14 +23,13 @@
 export const products = [
     {
     id: 23,
-    name: "سروال لولان",
-    price: "179",
-    originalPrice: "199",
-    description: "مريحة، مناسب لفصل الصيف",
-    images:[
-    "5eab0c13-7ff6-48f6-90d3-f77620dda560.webp",
-    "ChatGPT_Image_2_يوليو_2026_11_57_58_ص.webp",
-    "ChatGPT_Image_2_يوليو_2026_12_01_24_م.webp"
+    name: "انسومبل POLO بارده, مريح, مناسبه لفصل الصيف",
+    price: "219",
+    originalPrice: "249",
+    description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+images: [
+    "photo1.webp",
+    "photo2.webp"
 ],
 
 
