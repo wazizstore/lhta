@@ -34,7 +34,8 @@ images: [
 
 
      colors: [
-      { name: "بني", class: "brown", inStock: true }
+      { name: "ازرق", class: "blue", inStock: true },
+       { name: "اسود", class: "black", inStock: true }
      
     ],
     sizes: ["M", "L", "XL"],
