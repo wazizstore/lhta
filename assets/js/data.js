@@ -28,8 +28,8 @@ export const products = [
     originalPrice: "249",
     description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
-    "photo1.webp",
-    "photo2.webp"
+    "mmmm.webp",
+    "mmmmm.webp"
 ],
 
 
