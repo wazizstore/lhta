@@ -23,7 +23,7 @@
 export const products = [
     {
     id: 23,
-    name: "انسومبل POLO بارده, مريح, مناسبه لفصل الصيف",
+    name: "انسومبل polo",
     price: "219",
     originalPrice: "249",
     description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
@@ -49,10 +49,10 @@ images: [
     originalPrice: "230",
     description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
     images: [
-    "Untitled design - 2026-06-28T083622.279.webp",
-    "Untitled design - 2026-06-28T084657.866.webp",
-    "Untitled design - 2026-06-28T084730.640.webp",
-    "Untitled design - 2026-06-28T085218.094.webp"
+    "123.webp",
+    "1234.webp",
+    "12345.webp"
+ 
 ],
      colors: [
       { name: "أسود", class: "black", inStock: true },
