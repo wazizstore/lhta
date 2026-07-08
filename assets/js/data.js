@@ -57,7 +57,7 @@ images: [
      colors: [
       { name: "أسود", class: "black", inStock: true },
       { name: "فضي", class: "silver", inStock: true },
-       { name: "ازرق", class: "Blue", inStock: true }
+       { name: "ازرق", class: "blue", inStock: true }
     ],
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
