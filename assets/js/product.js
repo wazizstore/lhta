@@ -146,7 +146,7 @@ function renderInfo(p) {
       ${p.showSizeGuide ? `
         <div class="size-hint">
           <i class="fas fa-info-circle" aria-hidden="true"></i>
-          <span>M مناسب 65–75كغ · L مناسب 75–85كغ · XL مناسب 85–95كغ</span>
+        
         </div>
       ` : ''}
     </div>
