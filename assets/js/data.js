@@ -43,7 +43,7 @@ images: [
     inStock: true
   },
   {
-    id: 23,
+    id: 22,
     name: "ensemble polo",
     price: "199",
     originalPrice: "230",
