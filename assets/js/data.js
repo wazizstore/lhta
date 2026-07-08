@@ -64,7 +64,7 @@ images: [
   },
 
   {
-  id: 22,                          // رقم فريد، لا يتكرر
+  id: 21,                          // رقم فريد، لا يتكرر
   name: "pack 7 x 1",
   price: "249",
   originalPrice: "300",
