@@ -52,11 +52,12 @@ images: [
     "123.webp",
     "1234.webp",
     "12345.webp"
- 
+  
 ],
      colors: [
       { name: "أسود", class: "black", inStock: true },
-      { name: "أخضر", class: "green", inStock: true }
+      { name: "فضي", class: "silver", inStock: true },
+       { name: "ازرق", class: "Blue", inStock: true }
     ],
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
