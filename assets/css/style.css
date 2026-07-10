@@ -117,8 +117,8 @@ img { display: block; max-width: 100%; }
 /* ─── Hero ─── */
 .hero {
   position: relative;
-  height: 62vh;
-  min-height: 340px;
+height: 42vh;
+min-height: 220px;
   background: var(--black);
   overflow: hidden;
   display: flex;
