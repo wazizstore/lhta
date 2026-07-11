@@ -5,36 +5,37 @@
 */
 
 :root {
-  --black:   #000000;
+  --black:   #ffffff;
   --white:   #ffffff;
+
   --green:   #16a34a;
   --green-dark: #15803d;
   --green-light: #dcfce7;
   --green-mid: #22c55e;
 
-  --bg:      #000000;
-  --surface: #0f0f0f;
-  --surface2: #1a1a1a;
-  --border:  rgba(255,255,255,0.08);
-  --border-green: rgba(22,163,74,0.35);
+  --bg:      #ffffff;
+  --surface: #ffffff;
+  --surface2: #f8f8f8;
 
-  --text:    #ffffff;
-  --text-secondary: #a1a1a1;
-  --text-muted: #666666;
+  --border:  rgba(0,0,0,0.08);
+  --border-green: rgba(22,163,74,0.25);
+
+  --text:    #111111;
+  --text-secondary: #555555;
+  --text-muted: #777777;
 
   --radius-sm: 8px;
-  --radius:    14px;
+  --radius: 14px;
   --radius-lg: 20px;
   --radius-xl: 28px;
 
-  --shadow-sm:  0 2px 8px rgba(0,0,0,0.4);
-  --shadow:     0 8px 24px rgba(0,0,0,0.6);
-  --shadow-green: 0 6px 20px rgba(22,163,74,0.25);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-green: 0 6px 20px rgba(22,163,74,0.18);
 
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.15s ease;
 }
-
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
