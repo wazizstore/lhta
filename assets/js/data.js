@@ -42,6 +42,29 @@ images: [
     showSizeGuide: true,
     inStock: true
   },
+     {
+    id: 24,
+    name: "ensemble simple",
+    price: "219",
+    originalPrice: "249",
+    description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+images: [
+    "Untitled_design___2026_07_12T161249_654.webp",
+    "Untitled_design___2026_07_14T141156_477.webp",
+    "Untitled_design___2026_07_14T141207_723.webp"
+],
+
+
+     colors: [
+      { name: "بني", class: "brown", inStock: true },
+        { name: "فضي", class: "silver", inStock: true },
+       { name: "اسود", class: "black", inStock: true }
+     
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+  },
   {
     id: 22,
     name: "ensemble polo",
