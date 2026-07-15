@@ -32,6 +32,7 @@ src="https://www.facebook.com/tr?id=924727627322102&ev=PageView&noscript=1"
 
   <meta property="og:url" content="https://wazizstore.com/index.html">
   <meta property="og:locale" content="ar_MA">
+  <meta property="og:image" content="https://wazizstore.com/assets/img/hero-waziz.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -39,11 +40,12 @@ src="https://www.facebook.com/tr?id=924727627322102&ev=PageView&noscript=1"
   <meta name="twitter:description" content="أزياء رجالية وإكسسوارات فاخرة بجودة عالية، توصيل سريع لجميع المدن المغربية.">
 
 
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="favicon.ico" sizes="any">
 
-  <!-- Preload the LCP image (hero background) -->
-  
+  <!-- Preload the LCP image (hero photo) -->
+  <link rel="preload" as="image" href="assets/img/hero-waziz.webp" fetchpriority="high">
+
 
   <!-- Fonts: preconnect + non-blocking load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,14 +71,21 @@ src="https://www.facebook.com/tr?id=924727627322102&ev=PageView&noscript=1"
   }
   </script>
 </head>
-<body>
+<body class="home-page">
   <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
 
   <!-- ── Header ── -->
   <header class="site-header">
     <div class="nav-inner">
       <div style="width:40px;"></div>
-      <a href="index.html" class="nav-logo">store <span>waziz</span></a>
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-mark" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="1" width="24" height="24" rx="7" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M7 9.5V8a2.5 2.5 0 0 1 5 0v1.5M14 9.5V8a2.5 2.5 0 0 1 5 0v1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <text x="13" y="18.5" text-anchor="middle" font-family="Tajawal, sans-serif" font-weight="900" font-size="11" fill="currentColor">W</text>
+        </svg>
+        store <span>waziz</span>
+      </a>
       <button class="icon-btn" data-action="toggle-cart" aria-label="سلة التسوق" aria-haspopup="true">
         <i class="fas fa-shopping-bag" aria-hidden="true"></i>
         <span class="badge" id="cartBadge">0</span>
@@ -86,26 +95,105 @@ src="https://www.facebook.com/tr?id=924727627322102&ev=PageView&noscript=1"
 
   <main id="main">
     <!-- ── Hero ── -->
-    <section class="hero">
+    <section class="home-hero">
+      <div class="home-hero-inner">
+        <div class="home-hero-media">
+          <img
+            src="assets/img/hero-waziz.webp"
+            alt="عارض يرتدي إطلالة WAZIZ store بتصميم أنيق ومريح"
+            width="640" height="1080"
+            fetchpriority="high" loading="eager" decoding="async">
+        </div>
+        <div class="home-hero-copy">
+          <span class="home-eyebrow">WAZIZ STORE</span>
+          <h1 class="home-hero-title">
+            مرحبا بكم كاملين عند خوكم
+            <span class="home-hero-title-brand">WAZIZ STORE</span>
+          </h1>
+          <p class="home-hero-sub">
+            أفضل المنتجات المختارة بأفضل الأسعار<br>
+            توصيل سريع لجميع المدن المغربية والدفع عند الاستلام
+          </p>
+          <div class="home-hero-actions">
+            <a class="home-btn-primary" href="shop.html">
+              <i class="fas fa-bag-shopping" aria-hidden="true"></i>
+              ابدأ التسوق
+            </a>
+            <a class="home-btn-secondary" href="#featured">
+              تصفح المنتجات
+            </a>
+          </div>
+        </div>
+      </div>
 
-      <div class="hero-content">
-        <h1 class="hero-title">WAZIZ store</h1>
-        <a class="btn-primary" href="shop.html">
-          <i class="fas fa-shopping-bag" aria-hidden="true"></i>
-          تسوق الآن
+      <ul class="home-trust-strip">
+        <li>
+          <i class="fa-solid fa-award" aria-hidden="true"></i>
+          <div><strong>جودة مضمونة</strong><span>منتوجات مختارة بعناية</span></div>
+        </li>
+        <li>
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <div><strong>ثقة وأمان</strong><span>تسوق بكل راحة</span></div>
+        </li>
+        <li>
+          <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+          <div><strong>توصيل سريع</strong><span>لكل المدن المغربية</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ── Shop by Category ── -->
+    <section class="home-categories">
+      <h2 class="home-section-title">تسوق حسب الفئة</h2>
+      <div class="home-cat-grid">
+        <a class="home-cat-card" href="shop.html">
+          <i class="fa-solid fa-shirt" aria-hidden="true"></i>
+          <span>ملابس رجالية</span>
+        </a>
+        <a class="home-cat-card" href="shop.html">
+          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <span>ساعات</span>
+        </a>
+        <a class="home-cat-card" href="shop.html">
+          <i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i>
+          <span>عطور</span>
+        </a>
+        <a class="home-cat-card" href="shop.html">
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+          <span>حقائب</span>
+        </a>
+        <a class="home-cat-card" href="shop.html">
+          <i class="fa-solid fa-gem" aria-hidden="true"></i>
+          <span>إكسسوارات</span>
+        </a>
+        <a class="home-cat-card" href="shop.html">
+          <i class="fa-solid fa-gift" aria-hidden="true"></i>
+          <span>باقات هدايا</span>
         </a>
       </div>
     </section>
 
    <!-- Featured Products -->
-<section class="section">
-  <h2 class="section-title">أحدث الموديلات</h2>
+<section class="section home-featured" id="featured">
+  <div class="home-featured-head">
+    <h2 class="home-section-title">أحدث الموديلات</h2>
+    <a class="home-link-all" href="shop.html">
+      عرض الكل <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    </a>
+  </div>
   <div class="grid" id="featuredGrid" aria-live="polite"></div>
 </section>
+  </main>
+
   <!-- ── Footer ── -->
   <footer class="site-footer">
     <div class="footer-logo">WAZIZ <span>store</span></div>
     <p class="footer-tagline">أناقة مغربية بلمسة عالمية.</p>
+    <ul class="footer-badges">
+      <li><i class="fa-solid fa-headset" aria-hidden="true"></i> خدمة عملاء متاحة 24/7</li>
+      <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> تجربة تسوق سهلة وآمنة</li>
+      <li><i class="fa-solid fa-heart" aria-hidden="true"></i> رضاكم هدفنا</li>
+    </ul>
     <p class="footer-copy">© 2026 waziz store — جميع الحقوق محفوظة</p>
   </footer>
 
