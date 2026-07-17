@@ -21,6 +21,30 @@
 */
 
 export const products = [
+   {
+    id: 23,
+    name: "ensembl simple class",
+    price: "219",
+    originalPrice: "249",
+    description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+images: [
+    "product_image_1.webp",
+    "product_image_2.webp",
+    "product_image_3.webp",
+]
+,
+
+
+     colors: [
+      { name: "ابيض", class: "white", inStock: true },
+        { name: "فضي", class: "silver", inStock: true },
+       { name: "اسود", class: "black", inStock: true }
+     
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+  },
     {
     id: 23,
     name: "انسومبل polo",
@@ -68,7 +92,7 @@ images: [
   {
     id: 22,
     name: "ensemble polo",
-    price: "199",
+    price: "219",
     originalPrice: "230",
     description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
     images: [
@@ -91,7 +115,7 @@ images: [
   {
     id: 20,
     name: "Ensemble nike",
-    price: "199",
+    price: "219",
     originalPrice: "249",
     description: "طقم رياضي نايكي أنيق ومريح، مناسب للاستعمال اليومي والرياضة.",
     images: [
