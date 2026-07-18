@@ -31,8 +31,10 @@ images: [
     "product_image_1.webp",
     "product_image_2.webp",
     "product_image_3.webp",
-]
-,
+    "photo1.webp",
+    "photo2.webp",
+    "photo3.webp"
+],
 
 
      colors: [
