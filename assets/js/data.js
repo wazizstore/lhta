@@ -35,10 +35,7 @@ images: [
 
 
      colors: [
-      { name: "ابيض", class: "white", inStock: true },
-        { name: "فضي", class: "silver", inStock: true },
-         { name: "بيج", class: "beige", inStock: true },
-         { name: "الاخضر", class: "green", inStock: true },
+      { name: "بني", class: "brown", inStock: true },
          { name: "الازرق", class: "blue", inStock: true },
        { name: "اسود", class: "black", inStock: true }
      
