@@ -21,12 +21,41 @@
 */
 
 export const products = [
+    {
+    id: 23,
+    name: "ensembl nike simple",
+    price: "219",
+    originalPrice: "260",
+    description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+images: [
+    "product_image_1.webp",
+    "product_image_2.webp",
+    "product_image_3.webp",
+    "photo1.webp",
+    "photo2.webp",
+    "photo3.webp"
+],
+
+
+     colors: [
+      { name: "ابيض", class: "white", inStock: true },
+        { name: "فضي", class: "silver", inStock: true },
+         { name: "بيج", class: "beige", inStock: true },
+         { name: "الاخضر", class: "green", inStock: true },
+         { name: "الازرق", class: "blue", inStock: true },
+       { name: "اسود", class: "black", inStock: true }
+     
+    ],
+    sizes: ["M", "L", "XL", "Xxl"],
+    showSizeGuide: true,
+    inStock: true
+  },
    {
     id: 23,
     name: "ensembl simple class",
     price: "219",
     originalPrice: "249",
-    description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+    description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
     "product_image_1.webp",
     "product_image_2.webp",
@@ -55,7 +84,7 @@ images: [
     name: "انسومبل polo",
     price: "219",
     originalPrice: "249",
-    description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+    description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
     "mmmm.webp",
     "mmmmm.webp"
@@ -76,7 +105,7 @@ images: [
     name: "ensemble simple",
     price: "219",
     originalPrice: "249",
-    description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+    description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
     "Untitled_design___2026_07_12T161249_654.webp",
     "Untitled_design___2026_07_14T141156_477.webp",
