@@ -22,7 +22,7 @@
 
 export const products = [
     {
-    id: 27,
+    id: 28,
     name: "ensembl nike simple",
     price: "219",
     originalPrice: "260",
