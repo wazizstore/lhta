@@ -22,18 +22,15 @@
 
 export const products = [
     {
-    id: 23,
+    id: 27,
     name: "ensembl nike simple",
     price: "219",
     originalPrice: "260",
     description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
-    "product_image_1.webp",
-    "product_image_2.webp",
-    "product_image_3.webp",
-    "photo1.webp",
-    "photo2.webp",
-    "photo3.webp"
+    "Untitled design - 2026-07-20T163753.343.webp",
+    "Untitled design - 2026-07-20T164147.828.webp",
+    "Untitled design - 2026-07-20T163719.375.webp" 
 ],
 
 
@@ -51,7 +48,7 @@ images: [
     inStock: true
   },
    {
-    id: 23,
+    id: 26,
     name: "ensembl simple class",
     price: "219",
     originalPrice: "249",
@@ -80,7 +77,7 @@ images: [
     inStock: true
   },
     {
-    id: 23,
+    id: 25,
     name: "انسومبل polo",
     price: "219",
     originalPrice: "249",
