@@ -40,7 +40,7 @@ images: [
        { name: "اسود", class: "black", inStock: true }
      
     ],
-    sizes: ["M", "L", "XL", "Xxl"],
+    sizes: ["M", "L", "XL",],
     showSizeGuide: true,
     inStock: true
   },
