@@ -21,6 +21,28 @@
 */
 
 export const products = [
+  
+  {
+    id: 22,
+    name: "ensemble polo",
+    price: "219",
+    originalPrice: "230",
+    description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
+    images: [
+    "123.webp",
+    "1234.webp",
+    "12345.webp"
+  
+],
+     colors: [
+      { name: "أسود", class: "black", inStock: true },
+      { name: "فضي", class: "silver", inStock: true },
+       { name: "ازرق", class: "blue", inStock: true }
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: false
+  },
     {
     id: 28,
     name: "ensembl nike simple",
@@ -139,27 +161,6 @@ images: [
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
     inStock: true
-  },
-  {
-    id: 22,
-    name: "ensemble polo",
-    price: "219",
-    originalPrice: "230",
-    description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
-    images: [
-    "123.webp",
-    "1234.webp",
-    "12345.webp"
-  
-],
-     colors: [
-      { name: "أسود", class: "black", inStock: true },
-      { name: "فضي", class: "silver", inStock: true },
-       { name: "ازرق", class: "blue", inStock: true }
-    ],
-    sizes: ["M", "L", "XL"],
-    showSizeGuide: true,
-    inStock: false
   },
 
  
