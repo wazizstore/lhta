@@ -44,6 +44,29 @@ images: [
     showSizeGuide: true,
     inStock: true
   },
+  {
+    id: 23,
+    name: "ensembl class simple 2026",
+    price: "219",
+    originalPrice: "249",
+    description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
+images: [
+    "Untitled design - 2026-07-24T161849.642.webp",
+   "Untitled design - 2026-07-24T161934.540.webp",
+    "Untitled design - 2026-07-24T161917.788.webp"
+],
+
+
+     colors: [
+      { name: "اخضر", class: "green", inStock: true },
+             { name: "ابيض", class: "white", inStock: true },
+       { name: "اسود", class: "black", inStock: true }
+     
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+  },
    {
     id: 26,
     name: "ensembl simple class",
