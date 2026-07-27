@@ -25,8 +25,8 @@ export const products = [
   {
     id: 22,
     name: "ensemble polo",
-    price: "219",
-    originalPrice: "230",
+    price: "199",
+    originalPrice: "219",
     description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
     images: [
     "123.webp",
@@ -167,8 +167,8 @@ images: [
   {
     id: 20,
     name: "Ensemble nike",
-    price: "219",
-    originalPrice: "249",
+    price: "199",
+    originalPrice: "219",
     description: "طقم رياضي نايكي أنيق ومريح، مناسب للاستعمال اليومي والرياضة.",
     images: [
       "Untitled design (100).webp",
