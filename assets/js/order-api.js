@@ -8,7 +8,7 @@
 import { GAS_ENDPOINT } from './config.js';
 
 /**
- * @param {Object} customer - { name, phone, city, address }
+ * @param {Object} customer - { name, phone, city, address, orderId }
  * @param {Array}  items    - cart items [{ name, price, color, size }]
  * @returns {Promise<boolean>} success
  */
@@ -16,6 +16,9 @@ export async function submitOrder(customer, items) {
   const total = items.reduce((sum, item) => sum + parseInt(item.price, 10), 0);
 
   const payload = {
+    // معرّف فريد للطلب — يُستعمل أيضاً كـ eventID لحدث Purchase في
+    // Meta Pixel لمنع تكراره. حقل إضافي فقط، لا يمس بقية الأعمدة.
+    orderId: customer.orderId || '',
     name: customer.name,
     phone: customer.phone,
     city: customer.city,
