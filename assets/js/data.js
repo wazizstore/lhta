@@ -142,7 +142,7 @@ images: [
      {
     id: 24,
     name: "ensemble simple",
-    price: "219",
+    price: "199",
     originalPrice: "249",
     description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
