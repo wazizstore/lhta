@@ -41,7 +41,7 @@ export const products = [
      colors: [
       { name: "أسود", class: "black", inStock: true },
       { name: "فضي", class: "silver", inStock: true },
-       { name: "ازرق", class: "blue", inStock: true }
+      { name: "اخضر", class: "green", inStock: true }
     ],
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
