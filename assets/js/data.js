@@ -28,15 +28,40 @@ export const products = [
     price: "219",
     originalPrice: "249",
     description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
-    images: [
-    "ensemble-noir-modele-500x500.webp",
-    "ensemble-noir-carre-500x500.webp",
-    "ensemble-vert-modele-500x500.webp",
-          "ensemble-vert-carre-500x500.webp",
-    "ensemble-gris-modele-500x500.webp",
-    "ensemble-gris-carre-500x500.webp"
+
+
+images: [
+
+  "ensemble-noir-face.webp",
+"ensemble-vert-profil.webp",
+
+  "ensemble-gris-bras-croises.webp",
+  "ensemble-noir-assis.webp", 
+  "ensemble-noir-marche.webp",
+
+  "ensemble-gris-assis.webp", 
 
   
+
+  "ensemble-vert-dos.webp",
+
+  "ensemble-vert-detail.webp", 
+
+  "ensemble-marron-accroupi.webp",
+
+
+
+
+  "ensemble-gris-marche-profil.webp",
+
+
+
+
+
+
+
+  "ensemble-marron-assis-lateral.webp"
+
 ],
      colors: [
       { name: "أسود", class: "black", inStock: true },
