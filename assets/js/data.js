@@ -66,6 +66,7 @@ images: [
      colors: [
       { name: "أسود", class: "black", inStock: true },
       { name: "فضي", class: "silver", inStock: true },
+           { name: "البني", class: "brown", inStock: true },
       { name: "اخضر", class: "green", inStock: true }
     ],
     sizes: ["M", "L", "XL"],
