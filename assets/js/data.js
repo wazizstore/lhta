@@ -22,57 +22,7 @@
 
 export const products = [
   
-  {
-    id: 22,
-    name: "nike simple",
-    price: "219",
-    originalPrice: "249",
-    description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
-
-
-images: [
-
-  "ensemble-noir-face.webp",
-"ensemble-vert-profil.webp",
-
-  "ensemble-gris-bras-croises.webp",
-  "ensemble-noir-assis.webp", 
-  "ensemble-noir-marche.webp",
-
-  "ensemble-gris-assis.webp", 
-
   
-
-  "ensemble-vert-dos.webp",
-
-  "ensemble-vert-detail.webp", 
-
-  "ensemble-marron-accroupi.webp",
-
-
-
-
-  "ensemble-gris-marche-profil.webp",
-
-
-
-
-
-
-
-  "ensemble-marron-assis-lateral.webp"
-
-],
-     colors: [
-      { name: "أسود", class: "black", inStock: true },
-      { name: "فضي", class: "silver", inStock: true },
-           { name: "البني", class: "brown", inStock: true },
-      { name: "اخضر", class: "green", inStock: true }
-    ],
-    sizes: ["M", "L", "XL"],
-    showSizeGuide: true,
-    inStock: false
-  },
   
   {
     id: 22,
