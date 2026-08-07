@@ -95,29 +95,7 @@ images: [
     showSizeGuide: true,
     inStock: false
   },
-    {
-    id: 28,
-    name: "ensembl nike simple",
-    price: "219",
-    originalPrice: "260",
-    description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
-images: [
-    "Untitled design - 2026-07-20T163753.343.webp",
-    "Untitled design - 2026-07-20T164147.828.webp",
-    "Untitled design - 2026-07-20T163719.375.webp" 
-],
-
-
-     colors: [
-      { name: "بني", class: "brown", inStock: true },
-         { name: "الازرق", class: "blue", inStock: true },
-       { name: "اسود", class: "black", inStock: true }
-     
-    ],
-    sizes: ["M", "L", "XL",],
-    showSizeGuide: true,
-    inStock: true
-  },
+   
   {
     id: 23,
     name: "ensembl class simple 2026",
