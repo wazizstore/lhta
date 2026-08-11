@@ -121,27 +121,7 @@ images: [
     showSizeGuide: true,
     inStock: true
   },
-    {
-    id: 25,
-    name: "انسومبل polo",
-    price: "219",
-    originalPrice: "249",
-    description: "التوصيل مجاني • قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
-images: [
-    "mmmm.webp",
-    "mmmmm.webp"
-],
-
-
-     colors: [
-      { name: "ازرق", class: "blue", inStock: true },
-       { name: "اسود", class: "black", inStock: true }
-     
-    ],
-    sizes: ["M", "L", "XL"],
-    showSizeGuide: true,
-    inStock: false
-  },
+   
      {
     id: 24,
     name: "ensemble simple",
