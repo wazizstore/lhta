@@ -29,7 +29,7 @@ export const products = [
     description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
     images: [
     "ensemble-brown-model-500 (1).webp",
-    "ensemble-black-model-500 (1).webp",
+
     "ensemble-green-model-500 (1).webp",
         "ensemble-gray-model-500 (1).webp"
   
