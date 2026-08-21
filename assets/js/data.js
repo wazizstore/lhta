@@ -35,7 +35,7 @@ export const products = [
   
 ],
      colors: [
-      { name: "أسود", class: "black", inStock: true },
+   
       { name: "الرمادي", class: "Gray", inStock: true },
        { name: "اخضر", class: "green", inStock: true },
               { name: "بني", class: "brown", inStock: true }
