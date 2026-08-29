@@ -23,7 +23,7 @@
 export const products = [
      {
     id: 27,
-    name: "ensemble nike 2026",
+    name: "Ensemble de bonne qualité.",
     price: "269",
     originalPrice: "299",
     description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
