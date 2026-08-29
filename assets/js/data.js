@@ -36,10 +36,9 @@ export const products = [
 ],
      colors: [
    
-      { name: "الرمادي", class: "Gray", inStock: true },
-       { name: "اخضر", class: "green", inStock: true },
-              { name: "بني", class: "brown", inStock: true }
-
+      { name: "عنابي", class: "Deep Plum", inStock: true },
+       { name: "ابيض", class: "white", inStock: true }
+            
     ],
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
