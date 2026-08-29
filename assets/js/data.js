@@ -7,7 +7,7 @@
   name          : string
   price         : string (درهم)
   originalPrice : string
-  description   : string
+  description   : string 
   images        : array of image paths
   
   // Variant fields — only include if this product has them:
@@ -36,7 +36,7 @@ export const products = [
 ],
      colors: [
    
-      { name: "عنابي", class: "Deep Plum", inStock: true },
+      { name: "عنابي", class: "brown", inStock: true },
        { name: "ابيض", class: "white", inStock: true }
             
     ],
