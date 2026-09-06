@@ -21,29 +21,7 @@
 */
 
 export const products = [
-     {
-    id: 27,
-    name: "Ensemble de bonne qualité.",
-    price: "269",
-    originalPrice: "299",
-    description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
-    images: [
-    "Gemini_Generated_Image_pnx8s9pnx8s9pnx8.webp",
-
-    "Gemini_Generated_Image_vnr63qvnr63qvnr6.webp"
-  
-  
-],
-     colors: [
-   
-      { name: "بني", class: "brown", inStock: true },
-       { name: "ابيض", class: "white", inStock: true }
-            
-    ],
-    sizes: ["M", "L", "XL"],
-    showSizeGuide: true,
-    inStock: false
-  },
+    
    {
     id: 26,
     name: "ensemble nike 2026",
