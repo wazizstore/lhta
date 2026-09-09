@@ -22,30 +22,7 @@
 
 export const products = [
     
-   {
-    id: 26,
-    name: "ensemble nike 2026",
-    price: "219",
-    originalPrice: "249",
-    description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
-    images: [
-    "ensemble-brown-model-500 (1).webp",
 
-    "ensemble-green-model-500 (1).webp",
-        "ensemble-gray-model-500 (1).webp"
-  
-],
-     colors: [
-   
-      { name: "الرمادي", class: "Gray", inStock: true },
-       { name: "اخضر", class: "green", inStock: true },
-              { name: "بني", class: "brown", inStock: true }
-
-    ],
-    sizes: ["M", "L", "XL"],
-    showSizeGuide: true,
-    inStock: false
-  },
   
   
   {
