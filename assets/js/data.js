@@ -21,31 +21,47 @@
 */
 
 export const products = [
-    
-
-  
-  
-  {
-    id: 22,
-    name: "ensemble polo",
-    price: "199",
-    originalPrice: "219",
-    description: "طقم رجالي فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للصيف",
-    images: [
-    "123.webp",
-    "1234.webp",
-    "12345.webp"
+      {
+    id: 27,
+    name: "ensemble nike",
+    price: "219",
+    originalPrice: "249",
+description: "اونصومبل رجالية فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للبرد",
+        images: [
+    "Gemini_Generated_Image_46w7ip46w7ip46w7.webp",
+    "Gemini_Generated_Image_j1xo61j1xo61j1xo.webp"
   
 ],
      colors: [
       { name: "أسود", class: "black", inStock: true },
-      { name: "فضي", class: "silver", inStock: true },
-       { name: "ازرق", class: "blue", inStock: true }
+      { name: "اخضر", class: "green", inStock: true }
     ],
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
-    inStock: false
+    inStock: true
   },
+
+    {
+    id: 28,
+    name: "jacket nike",
+    price: "199",
+    originalPrice: "219",
+description: "🔥 جاكيط نايك دوبل فاص (2 في 1) – الأناقة والدفء فجاكيط وحدة 🔥",
+      images: [
+    "1000013720.webp",
+    "1000013722.webp",
+    "1770405531_1000496322 (1).webp"
+            "1000013719.webp"
+  
+],
+     colors: [
+      { name: "أسود", class: "black", inStock: true }
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+  },
+  
    
   {
     id: 23,
