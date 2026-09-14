@@ -44,8 +44,8 @@ description: "اونصومبل رجالية فاخر 😎 ✔️ مريح ✔️
     {
     id: 28,
     name: "jacket nike",
-    price: "199",
-    originalPrice: "219",
+    price: "290",
+    originalPrice: "350",
 description: "🔥 جاكيط نايك دوبل فاص (2 في 1) – الأناقة والدفء فجاكيط وحدة 🔥",
       images: [
          "1770405531_1000496322 (1).webp",
@@ -68,8 +68,8 @@ description: "🔥 جاكيط نايك دوبل فاص (2 في 1) – الأنا
   {
     id: 23,
     name: "ensembl class simple 2026",
-    price: "290",
-    originalPrice: "350",
+    price: "219",
+    originalPrice: "240",
     description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
     "Untitled design - 2026-07-24T161849.642.webp",
