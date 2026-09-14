@@ -66,8 +66,8 @@ description: "🔥 جاكيط نايك دوبل فاص (2 في 1) – الأنا
   {
     id: 23,
     name: "ensembl class simple 2026",
-    price: "219",
-    originalPrice: "249",
+    price: "290",
+    originalPrice: "350",
     description: "قلب قيس عاد خلص • التوصيل لجميع مدن المغرب",
 images: [
     "Untitled design - 2026-07-24T161849.642.webp",
