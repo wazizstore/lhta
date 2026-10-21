@@ -26,7 +26,7 @@ export const products = [
     description: "🔥 جاكيط نايك دوبل فاص (2 في 1) – الأناقة والدفء فجاكيط وحدة 🔥",
     images: [
       "1000032676.webp",
-      "10000326767.webp",
+      "1000032677.webp",
       "1000032675.webp"
     ],
     colors: [
