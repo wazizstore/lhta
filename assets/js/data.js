@@ -19,6 +19,72 @@ export const products = [
     inStock: true
   },
   
+{
+    id: 101,
+    name: "tracksuit jacket pantalon",
+    price: "240",
+    originalPrice: "289",
+    description: "سيت سبور عملي بجاكيط وبنطلون، متوفر بألوان مختلفة باش تختار الستايل اللي كيعجبك.",
+    images: [
+      "product-1/product-1-01.webp",
+      "product-1/product-1-02.webp",
+      "product-1/product-1-03.webp",
+      "product-1/product-1-04.webp",
+      "product-1/product-1-05.webp",
+      "product-1/product-1-06.webp"
+    ],
+    colors: [
+      { name: "أزرق", class: "blue", inStock: true },
+      { name: "أسود", class: "black", inStock: true },
+      { name: "أبيض", class: "white", inStock: true }
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+},
+
+{
+    id: 102,
+    name: "training à capuche",
+    price: "250",
+    originalPrice: "299",
+    description: "ترينينغ بكابوش بتصميم رياضي مريح، متوفر بالأبيض والأسود للوك كاجوال وسبور.",
+    images: [
+      "product-2/product-2-01.webp",
+      "product-2/product-2-02.webp",
+      "product-2/product-2-03.webp",
+      "product-2/product-2-04.webp"
+    ],
+    colors: [
+      { name: "أبيض", class: "white", inStock: true },
+      { name: "أسود", class: "black", inStock: true }
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+},
+
+{
+    id: 103,
+    name: "Nike tracksuit",
+    price: "240",
+    originalPrice: "279",
+    description: "ترينينغ Nike بستايل سبور عصري، بألوان الأسود والأخضر مع تفاصيل بيضاء.",
+    images: [
+      "product-3/product-3-01.webp",
+      "product-3/product-3-02.webp",
+      "product-3/product-3-03.webp"
+    ],
+    colors: [
+      { name: "أسود", class: "black", inStock: true },
+      { name: "أخضر", class: "green", inStock: true },
+      { name: "أبيض", class: "white", inStock: true }
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+},
+  
   {
     id: 27,
     name: "ensemble nike",
