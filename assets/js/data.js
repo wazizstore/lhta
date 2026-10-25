@@ -42,6 +42,26 @@ export const products = [
     showSizeGuide: true,
     inStock: true
 },
+  {
+    id: 104,
+    name: "USPA tracksuit",
+    price: "240",
+    originalPrice: "279",
+    description: "سيت سبور USPA بجاكيط بنصف سحاب وبنطلون، ستايل كاجوال ومرتب متوفر فالأسود والأبيض.",
+    images: [
+      "product-4-01.webp",
+      "product-4-02.webp",
+      "product-4-03.webp",
+      "product-4-04.webp"
+    ],
+    colors: [
+      { name: "أسود", class: "black", inStock: true },
+      { name: "أبيض", class: "white", inStock: true }
+    ],
+    sizes: ["M", "L", "XL"],
+    showSizeGuide: true,
+    inStock: true
+  },
 
 {
     id: 102,
