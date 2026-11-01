@@ -19,6 +19,47 @@ function switchImage(src, thumbEl) {
   thumbEl.classList.add('active');
 }
 
+/* Swipe gestures on the main product image:
+   swipe right → previous image, swipe left → next image. */
+function initSwipe() {
+  const wrap = document.querySelector('.main-img-wrap');
+  const thumbs = Array.from(document.querySelectorAll('.thumb-img'));
+  if (!wrap || thumbs.length < 2) return;
+
+  const MIN_DISTANCE = 40; // px of horizontal movement needed to count as a swipe
+  let startX = 0, startY = 0, tracking = false;
+
+  const currentIndex = () => {
+    const i = thumbs.findIndex(t => t.classList.contains('active'));
+    return i === -1 ? 0 : i;
+  };
+
+  const goTo = (i) => {
+    if (i < 0 || i >= thumbs.length) return;
+    switchImage(thumbs[i].dataset.img, thumbs[i]);
+  };
+
+  wrap.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) { tracking = false; return; }
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    tracking = true;
+  }, { passive: true });
+
+  wrap.addEventListener('touchend', (e) => {
+    if (!tracking) return;
+    tracking = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    // Ignore short moves and mostly-vertical gestures (normal page scroll)
+    if (Math.abs(dx) < MIN_DISTANCE || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    goTo(currentIndex() + (dx > 0 ? -1 : 1)); // right → previous, left → next
+  }, { passive: true });
+
+  wrap.addEventListener('touchcancel', () => { tracking = false; }, { passive: true });
+}
+
 function selectColor(colorName, el) {
   selectedColor = colorName;
   document.querySelectorAll('.color-swatch').forEach(s => {
@@ -243,6 +284,7 @@ function renderProduct() {
   page.querySelectorAll('.thumb-img').forEach(t =>
     t.addEventListener('click', () => switchImage(t.dataset.img, t))
   );
+  initSwipe();
   page.querySelectorAll('.color-swatch:not([disabled])').forEach(s =>
     s.addEventListener('click', () => selectColor(s.dataset.color, s))
   );
