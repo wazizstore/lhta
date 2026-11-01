@@ -515,6 +515,7 @@ img { display: block; max-width: 100%; }
   position: relative;
   line-height: 0;
   text-align: center;
+  touch-action: pan-y; /* vertical scroll stays native; horizontal swipe is handled by JS */
 }
 
 .main-img {
@@ -526,6 +527,8 @@ img { display: block; max-width: 100%; }
   object-fit: contain;
   transition: opacity 0.2s ease;
   background: var(--surface2);
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .thumb-grid {
