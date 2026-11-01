@@ -391,6 +391,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+  align-items: start; /* each card follows its own image height (no stretching / empty space) */
 }
 
 @media (min-width: 480px) { 
@@ -430,18 +431,18 @@ img { display: block; max-width: 100%; }
 
 .pcard-img {
   position: relative;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
+  overflow: hidden; /* only clips the hover zoom */
   background: var(--surface2);
+  line-height: 0;
 }
 
 .pcard-img img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto; /* keeps the original aspect ratio of every image */
   object-fit: contain;
   transition: transform 0.5s ease;
   background: var(--surface2);
-  padding: 4px;
 }
 
 .pcard:hover .pcard-img img { 
@@ -507,17 +508,21 @@ img { display: block; max-width: 100%; }
 
 .main-img-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--surface2);
   border: 1px solid var(--border);
   position: relative;
+  line-height: 0;
+  text-align: center;
 }
 
 .main-img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto; /* original aspect ratio: portrait, landscape or square */
+  max-height: 85vh; /* safety cap for very tall images (image stays whole, never cropped) */
+  margin: 0 auto;
   object-fit: contain;
   transition: opacity 0.2s ease;
   background: var(--surface2);
@@ -528,11 +533,12 @@ img { display: block; max-width: 100%; }
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   margin-top: 10px;
+  align-items: start;
 }
 
 .thumb-img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: auto; /* original aspect ratio */
   object-fit: contain;
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -988,7 +994,7 @@ img { display: block; max-width: 100%; }
 .cart-item img {
   width: 50px;
   height: 50px;
-  object-fit: cover;
+  object-fit: contain; /* show the whole image instead of cropping */
   border-radius: 8px;
   background: var(--surface2);
   flex-shrink: 0;
