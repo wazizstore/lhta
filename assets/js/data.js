@@ -97,8 +97,8 @@ export const products = [
     ],
     colors: [
       { name: "أسود", class: "black", inStock: true },
-      { name: "أخضر", class: "green", inStock: true },
-      { name: "أبيض", class: "white", inStock: true }
+      { name: "أخضر", class: "green", inStock: true }
+
     ],
     sizes: ["M", "L", "XL"],
     showSizeGuide: true,
