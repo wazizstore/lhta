@@ -63,26 +63,7 @@ export const products = [
     inStock: true
   },
 
-{
-    id: 102,
-    name: "training à capuche",
-    price: "250",
-    originalPrice: "299",
-    description: "ترينينغ بكابوش بتصميم رياضي مريح، متوفر بالأبيض والأسود للوك كاجوال وسبور.",
-    images: [
-      "product-2-01.webp",
-      "product-2-02.webp",
-      "product-2-03.webp",
-      "product-2-04.webp"
-    ],
-    colors: [
-      { name: "أبيض", class: "white", inStock: true },
-      { name: "أسود", class: "black", inStock: true }
-    ],
-    sizes: ["M", "L", "XL"],
-    showSizeGuide: true,
-    inStock: true
-},
+
 
 {
     id: 103,
@@ -104,23 +85,5 @@ export const products = [
     showSizeGuide: true,
     inStock: true
 },
-  
-  {
-    id: 27,
-    name: "ensemble nike",
-    price: "219",
-    originalPrice: "249",
-    description: "اونصومبل رجالية فاخر 😎 ✔️ مريح ✔️ جودة عالية ✔️ مناسب للبرد",
-    images: [
-      "Gemini_Generated_Image_j1xo61j1xo61j1xo.webp",
-      "Gemini_Generated_Image_46w7ip46w7ip46w7.webp"
-    ],
-    colors: [
-      { name: "أسود", class: "black", inStock: true },
-      { name: "اخضر", class: "green", inStock: true }
-    ],
-    sizes: ["M", "L", "XL"],
-    showSizeGuide: true,
-    inStock: true
-  }
+
 ];
