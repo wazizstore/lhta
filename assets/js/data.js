@@ -49,10 +49,9 @@ export const products = [
     originalPrice: "279",
     description: "سيت سبور USPA بجاكيط بنصف سحاب وبنطلون، ستايل كاجوال ومرتب متوفر فالأسود والأبيض.",
     images: [
-      "WhatsApp Image 2026-11-01 at 16.02.55.webp",
-      "product-4-02.webp",
-      "product-4-03.webp",
-      "WhatsApp Image 2026-11-01 at 16.02.56.webp"
+      "d30b2921-7fc7-4074-9007-464a19d7e01d.webp",
+      "6a68b6f3-236b-463a-8b18-bcd56bca8de1.webp"
+
     ],
     colors: [
       { name: "أسود", class: "black", inStock: true },
